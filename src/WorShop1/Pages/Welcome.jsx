@@ -26,7 +26,7 @@ export const Welcome = () => {
   };
 
   return (
-    <div className='containerFather'>
+    <header className='containerFather'>
       <h1>Bienvenido {user ? `${user.username}` : 'Usuario'}</h1>
 
       <form onSubmit={onSubmit}>
@@ -62,6 +62,6 @@ export const Welcome = () => {
           Buscar Nombre
         </button>
       </form>
-    </div>
+    </header>
   );
 };
