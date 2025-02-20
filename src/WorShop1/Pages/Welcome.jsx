@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Worshop } from '../../Contexts/Context';
-import './Welcome.css';
+
 
 export const Welcome = () => {
   const { validateUser, user } = useContext(Worshop);
@@ -11,8 +11,7 @@ export const Welcome = () => {
    
     
     validateUser(users.username.toLowerCase()); 
-    console.log({user});
-    
+    setUser({ name: '', lastname: '', username: '' });
   };
 
   
@@ -26,8 +25,8 @@ export const Welcome = () => {
   };
 
   return (
-    <header className='containerFather'>
-      <h1>Bienvenido {user ? `${user.username}` : 'Usuario'}</h1>
+    <header className='w-80 h-80 bg-indigo-900 rounded-xl p-8 text-white'>
+      <h1 className="text-3xl" >Bienvenido {user ? `${user.username}` : 'Usuario'}</h1>
 
       <form onSubmit={onSubmit}>
         <div>
@@ -35,6 +34,7 @@ export const Welcome = () => {
           <input 
             type="text"  
             name="name" 
+            className='border border-black bg-white text-black rounded-lg mt-1 ml-9 px-2 py-1'
             value={users.name} 
             onChange={handleChange} 
           />
@@ -44,6 +44,7 @@ export const Welcome = () => {
           <input 
             type="text"  
             name="lastname"
+            className='border border-black bg-white text-black rounded-lg mt-1 ml-9 px-2 py-1'
             value={users.lastname} 
             onChange={handleChange} 
           />
@@ -53,12 +54,14 @@ export const Welcome = () => {
           <input 
             type="text"  
             name="username"
+            className='border border-black bg-white text-black rounded-lg mt-1 ml-9 px-2 py-1'
             value={users.username} 
             onChange={handleChange} 
           />
         </div>
 
-        <button type="submit">
+        <button type="submit" 
+        className='bg-white text-black border border-black rounded-lg mt-4 ml-17 px-2 py-1'>
           Buscar Nombre
         </button>
       </form>
