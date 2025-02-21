@@ -4,7 +4,7 @@ import { Worshop } from '../../Contexts/Context';
 
 
 
-export const Controller = () => {
+export const ControllerSound = () => {
     const { setIsRunning, setTime } = useContext(Worshop);
 
   return (
